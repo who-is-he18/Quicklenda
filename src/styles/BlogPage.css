@@ -521,7 +521,7 @@
   .newsletter-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
   }
   
   .newsletter-form input {
@@ -530,7 +530,7 @@
     border-radius: 6px;
     font-size: 16px;
     background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    color: #850303;
     outline: none;
   }
   

@@ -1276,7 +1276,7 @@ html {
 .subscription-form {
   display: inline-flex;
   align-items: center;
-  gap: 90px;
+  gap: 4px;
   background-color: white;
   padding: 0px;
   border-radius: 4px;
@@ -1292,7 +1292,7 @@ html {
 }
 
 .subscription-form button {
-  padding: 10px 15px;
+  padding: 10px 7px;
   background-color: #6c63ff;
   color: white;
   font-size: 1rem;
