@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Navbar.css'; 
+import '../styles/Navbar.css';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,7 +20,11 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="menu-toggle" data-aos="fade-left" onClick={toggleMenu}>
+        <div 
+          className={`menu-toggle ${menuOpen ? 'active' : ''}`} 
+          onClick={toggleMenu}
+          data-aos="fade-left"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -28,10 +32,10 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className={`nav-links ${menuOpen ? 'active' : ''}`} data-aos="fade-right">
-          <a href="#how-it-works">How It Works</a>
-          <a href="#features">Features</a>
-          <a href="#overview">Overview</a>
-          <a href="#demo-booking" className="signup-btn">
+          <a href="#how-it-works" onClick={() => setMenuOpen(false)}>How It Works</a>
+          <a href="#features" onClick={() => setMenuOpen(false)}>Features</a>
+          <a href="#overview" onClick={() => setMenuOpen(false)}>Overview</a>
+          <a href="#demo-booking" className="signup-btn" onClick={() => setMenuOpen(false)}>
             Sign Up
           </a>
         </div>
