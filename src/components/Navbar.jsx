@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -8,8 +8,19 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // Close menu when scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [menuOpen]);
+
   return (
-    <header className="quicklenda-navbar" data-aos="fade-down">
+    <header className="quicklenda-navbar">
       <div className="navbar-container">
         {/* Logo */}
         <div className="logo">
@@ -23,7 +34,6 @@ const Navbar = () => {
         <div 
           className={`menu-toggle ${menuOpen ? 'active' : ''}`} 
           onClick={toggleMenu}
-          data-aos="fade-left"
         >
           <span></span>
           <span></span>
@@ -31,7 +41,7 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className={`nav-links ${menuOpen ? 'active' : ''}`} data-aos="fade-right">
+        <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
           <a href="#how-it-works" onClick={() => setMenuOpen(false)}>How It Works</a>
           <a href="#features" onClick={() => setMenuOpen(false)}>Features</a>
           <a href="#overview" onClick={() => setMenuOpen(false)}>Overview</a>
