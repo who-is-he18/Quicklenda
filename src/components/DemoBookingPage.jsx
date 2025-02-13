@@ -12,7 +12,7 @@ const DemoBookingPage = () => {
   }, []);
 
   return (
-    <div>
+    <div class="main-content10">
        
       {/* Hero Section */}
       <section className="quicklenda-hero">

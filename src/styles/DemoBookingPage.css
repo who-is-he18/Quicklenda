@@ -4,6 +4,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Add this to your main content container */
+.main-content10 {
+  padding-top: 80px; /* Adjust based on your navbar height */
+}
+
 
 
 /* Hero Section */
