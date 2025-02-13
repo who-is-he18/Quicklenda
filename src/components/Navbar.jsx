@@ -1,8 +1,13 @@
-// src/components/Navbar.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Navbar.css'; 
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className="quicklenda-navbar" data-aos="fade-down">
       <div className="navbar-container">
@@ -15,14 +20,14 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="menu-toggle" data-aos="fade-left">
+        <div className="menu-toggle" data-aos="fade-left" onClick={toggleMenu}>
           <span></span>
           <span></span>
           <span></span>
         </div>
 
         {/* Navigation Links */}
-        <div className="nav-links" data-aos="fade-right">
+        <div className={`nav-links ${menuOpen ? 'active' : ''}`} data-aos="fade-right">
           <a href="#how-it-works">How It Works</a>
           <a href="#features">Features</a>
           <a href="#overview">Overview</a>

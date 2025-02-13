@@ -33,7 +33,7 @@ const DemoBookingPage = () => {
               lifecycle.
             </p>
             <div className="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-              <a href="#signup" className="btn-primary">
+              <a href="#demo-booking" className="btn-primary">
                 Sign Up Now
               </a>
               <a href="/blogs" className="btn-secondary">
